@@ -2254,7 +2254,7 @@ def CheckStyle(filename, clean_lines, linenum, file_extension, class_state,
            cleansed_line.find('break;') != -1) and
       # Allow for inline lambda expressions.
       # TODO(esawin): Find a better solution.
-      cleansed_line.find('](') != -1):
+      cleansed_line.find('](') == -1):
     error(filename, linenum, 'whitespace/newline', 4,
           'More than one command on the same line')
 
